@@ -1,0 +1,31 @@
+
+  .Form {
+    background-color: rgb(240, 13, 153);
+    padding: 2rem;
+    border: 3px solid rgb(10, 10, 10);
+    margin-left: 4px;
+    margin-top: 1rem;
+  
+  }
+  .Form-name {
+    color: azure;
+    margin-left: -7rem;
+  }
+  .message-box {
+    background-color: rgb(253, 252, 253);
+    padding: 2rem;
+    border: 3px solid rgb(245, 3, 164);
+  }
+  .msg-box{
+    margin-top: 5rem;
+  }
+  .lable {
+    margin: 1rem;
+  }
+  .Button{
+    margin-left: -9rem;
+    margin-top: 1rem;
+  }
+  .checkbox{
+    margin-left: 4rem;
+  }

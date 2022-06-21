@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./Navs.css"
 import { Navbar, Container, FormControl, Button, Nav } from "react-bootstrap";
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import "../LogNavs/LogNavs.css"
 
-const Navs = () => {
+const LogNavs = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
 
@@ -66,4 +66,4 @@ const Navs = () => {
   );
 };
 
-export default Navs;
+export default LogNavs;

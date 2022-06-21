@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navs from "../Navs/Navs";
+import "./Login.css";
 import {
   Button,
   Form,
@@ -7,12 +7,19 @@ import {
   FormControl,
   FormCheck,
 } from "react-bootstrap";
-import "./Login.css";
 import { useNavigate } from "react-router-dom";
-
+import "./Login.css"
+import LogNavs from '../LogNavs/LogNavs';
+interface user {
+  Name: string;
+  Email: string;
+  password: string | Number;
+  Age: Number;
+}
 const Login = () => {
+  let navigate = useNavigate();
   const [validate, setValidate] = useState(false);
-let navigate =useNavigate()
+
   const [Data, setData] = useState({
     Name: "",
     Email: "",
@@ -22,7 +29,7 @@ let navigate =useNavigate()
   const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     setData({ ...Data, [e.target.name]: e.target.value });
   };
-  const loginSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const signSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setValidate(true);
     if (
@@ -31,22 +38,20 @@ let navigate =useNavigate()
       Data.password !== "" &&
       Data.checkbox !== ""
     ) {
-      console.log(Data,"Datavalue");
+      navigate("/Home");
     }
-    localStorage.setItem("Signup", JSON.stringify([Data]));
-    navigate("/Home")
   };
   return (
-    <div className="bg">
-      <Navs/>
+    <div className="bg-img">
+    <LogNavs/>
       <div>
         <div className="Margin">
-          <h1>Login</h1><hr/>
+          <h1>Login</h1>
           <Form
             className="sign formClass"
             noValidate
             validated={validate}
-            onSubmit={loginSubmit}
+            onSubmit={signSubmit}
           >
             <InputGroup hasValidation>
               <div className="col d-flex">
